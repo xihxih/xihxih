@@ -7,6 +7,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>戏戏的主页</title>
    <style>
+      /* *{
+         padding: 0;
+         margin: 0;
+      } */
       body {
          margin: 0;
          padding: 0;
@@ -44,17 +48,25 @@
          align-items: center;
       }
 
+      /* 上边部分结束 */
       a:hover {
          color: brown;
+         background-color: darkorange;
       }
 
-      a{
+      a {
          text-decoration: none;
-         color: purple;
+         color: white;
+         display: block;
       }
+
       a img {
          width: 50px;
          vertical-align: middle;
+      }
+
+      .container a {
+         margin: 5px 0;
       }
 
       .container {
@@ -63,29 +75,31 @@
          background-color: bisque;
       }
 
-      .container dd {
-         margin: 5px 0;
-      }
 
       .container h1 {
          width: 400px;
-         margin: 0 auto ;
+         margin: 0 auto;
          display: flex;
          justify-content: space-between;
          color: white;
       }
-      .container h1 span{
+
+      .container h1 span {
          animation: guangying .8s ease-in-out infinite alternate-reverse;
       }
-      .container h1 span:nth-child(n + 2){
-         animation-delay:.2s;
+
+      .container h1 span:nth-child(n + 2) {
+         animation-delay: .2s;
       }
-      .container h1 span:nth-child( n + 3){
-         animation-delay:.4s;
+
+      .container h1 span:nth-child(n + 3) {
+         animation-delay: .4s;
       }
-      .container h1 span:nth-child( n + 4){
-         animation-delay:.6s;
+
+      .container h1 span:nth-child(n + 4) {
+         animation-delay: .6s;
       }
+
       @keyframes guangying {
          to {
             color: #ff0266;
@@ -93,12 +107,45 @@
          }
       }
 
-      h2 {
+      .container h2 {
          text-align: center;
-         color: coral;
+         color: white;
+         cursor: pointer;
+         background-image: linear-gradient(to right,#C6FFDD,#FBD786,#f64f59);
+         background-size: 200%;
+         background-position: 50% 0;
+         transition: .5s;
+      }
+      .container h2:hover{
+         background-size: 100%;
+         transition: .5s;
+         background-position: 0 0;
       }
 
-      .container h1 span {}
+      .container .lanmu1 {
+         height: auto;
+         overflow: hidden;
+         background-image: linear-gradient(to right,#0f0c29,#302b63,#24243e);
+      }
+
+      .container .lanmu2 {
+         height: 0;
+         overflow: hidden;
+      }
+
+      .day {
+         cursor: pointer;
+         background-image: linear-gradient(to right,#12c2e9,#c471ed,#f64f59);
+         background-size: 200%;
+         text-align: center;
+         transition: .5s;
+      }
+
+      .day:hover {
+         background-image: linear-gradient(to right,#12c2e9,#c471ed,#f64f59);
+         background-position: 100% 0;
+         transition: .5s;
+      }
    </style>
 </head>
 
@@ -113,34 +160,81 @@
 
       <div class="container">
          <h1><span>我</span><span>的</span><span>作</span><span>业</span></h1>
-         <dl>
-            <dt>
-               <h2>九月</h2>
-            </dt>
 
-            <dt>
-               <h3>第一天</h3>
-            </dt>
+         <h2>九月</h2>
 
-            <dd><a href="./9/day1/5-下拉菜单.html"><img src = "images/head.gif"/>下拉菜单(切换class属性值)</a></dd>
-            <dd><a href="./9/day1/1-控制字号.html"><img src = "images/head.gif"/>文章字号切换(切换class属性值)</a></dd>
-            <dd><a href="./9/day1/6-修改class属性改变页面样式.html"><img src = "images/head.gif"/>文章样式切换(切换class属性值)</a></dd>
-            <dd><a href="./9/day1/3-灯泡.html"><img src = "images/head.gif"/>开关灯(切换src属性值)</a></dd>
-            <dd><a href="./9/day1/4-修改class属性改变隐藏.html"><img src = "images/head.gif"/>开关按钮(切换class属性值)</a></dd>
-            <dd><a href="./9/day1/7-张三在哪？.html"><img src = "images/head.gif"/>张三在北京 (读取value属性值)</a></dd>
-            <dd><a href="./9/day1/11-当前菜单.html"><img src = "images/head.gif"/>当前菜单(切换class属性值)</a></dd>
-            <dd><a href="./9/day1/2-选项卡.html"><img src = "images/head.gif"/>选项卡(切换class属性值)</a></dd>
-
-            <dt>
-               <h3>第二天</h3>
-            </dt>
-         </dl>
+         <h3 class="day">9.1操作属性</h3>
+         <div class="lanmu1 lanmu2">
+            <ol>
+               <li><a href="./9/day1/5-下拉菜单.html"><img src="images/head.gif" />下拉菜单(切换class属性值)</a></li>
+               <li><a href="./9/day1/1-控制字号.html"><img src="images/head.gif" />文章字号切换(切换class属性值)</a></li>
+               <li><a href="./9/day1/6-修改class属性改变页面样式.html"><img src="images/head.gif" />文章样式切换(切换class属性值)</a></li>
+               <li><a href="./9/day1/3-灯泡.html"><img src="images/head.gif" />开关灯(切换src属性值)</a></li>
+               <li><a href="./9/day1/4-修改class属性改变隐藏.html"><img src="images/head.gif" />开关按钮(切换class属性值)</a></li>
+               <li><a href="./9/day1/7-张三在哪？.html"><img src="images/head.gif" />张三在北京 (读取value属性值)</a></li>
+               <li><a href="./9/day1/11-当前菜单.html"><img src="images/head.gif" />当前菜单(切换class属性值)</a></li>
+               <li><a href="./9/day1/2-选项卡.html"><img src="images/head.gif" />选项卡(切换class属性值)</a></li>
+            </ol>
+         </div>
+         <h3 class="day">9.2操作样式</h3>
+         <div class="lanmu1 lanmu2">
+            <ol>
+               <li><a href=""><img src="images/car.gif"/>百变盒子</a></li>
+               <li><a href=""><img src="images/car.gif"/>文字字号控制</a></li>
+            </ol>
+         </div>
+         <h3 class="day">9.3操作内容</h3>
+         <div class="lanmu1 lanmu2">
+            <ol>
+               <li><a href=""><img src="images/hand.gif"/>聊天室</a></li>
+               <li><a href=""><img src="images/hand.gif"/>微博</a></li>
+               <li><a href=""><img src="images/hand.gif"/>坚果微信聊天</a></li>
+            </ol>
+         </div>
+         <h3 class="day">9.4if条件语句</h3>
+         <div class="lanmu1 lanmu2">
+            <ol>
+               <li><a href=""><img src="images/knive.gif"/>显示隐藏圆</a></li>
+               <li><a href=""><img src="images/knive.gif"/>头像切换</a></li>
+               <li><a href=""><img src="images/knive.gif"/>分数评估</a></li>
+               <li><a href=""><img src="images/knive.gif"/>边界值</a></li>
+               <li><a href=""><img src="images/knive.gif"/>单模轮播图</a></li>
+               <li><a href=""><img src="images/knive.gif"/>双模轮播图</a></li>
+               <li><a href=""><img src="images/knive.gif"/>字号边界控制</a></li>
+               <li><a href=""><img src="images/knive.gif"/>计数器</a></li>
+            </ol>
+         </div>
       </div>
    </zhongjiande>
    <dibubanquan class="dibu">
       <p>版权所有：duxingzhi.com</p>
       <a href="#">我的网站</a>
    </dibubanquan>
+   <script>
+      //创建点击目录显示下面的栏目
+      var oDay = document.querySelectorAll('.day')
+      var oLanmu = document.querySelectorAll('.lanmu1')
+      var last1 = oLanmu[0]
+      
+
+      for (let i = 0; i < oDay.length; i++) {
+         oLanmu[i].num1 = false
+         oDay[i].onclick = function () {
+            if (!oLanmu[i].num1) {
+               last1.className = 'lanmu1 lanmu2'
+               last1.num1 = false
+               
+               oLanmu[i].className = 'lanmu1'
+               last1 = oLanmu[i]
+            }else{
+               oLanmu[i].className = 'lanmu1 lanmu2'
+               
+            }
+            oLanmu[i].num1 = !oLanmu[i].num1
+            console.log(last1)
+         }
+      }
+   </script>
 </body>
 
 </html>
