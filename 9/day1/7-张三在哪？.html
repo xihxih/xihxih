@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三在北京</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="nm">
+        <select name="" id="sc">
+            <option value="北京">北京</option>
+            <option value="苏州">苏州</option>
+            <option value="扬州">扬州</option>
+        </select>
+        <input type="button" value="按钮" id="btn">
+    </form>
+</body>
+<script>
+    document.getElementById('btn').onclick = function(){
+    alert(document.getElementById('nm').value + ' 在 ' + document.getElementById('sc').value);
+	}
+</script>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #sz{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+        }
+        #box3{
+            width: 350px;
+            padding: 20px 0;
+            background-color: white;
+            border: 30px solid #aaa;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%,-50%);
+        }
+        .box1{
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            line-height: 50px; 
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .box2{
+            display: flex;
+            justify-content: center;
+        }
+        .xy{
+            width: 50px;
+            height: 50px;
+            background-color:#EFEFEF ;
+            border: 1px solid #666;
+            text-decoration: none;
+            color: #333;
+        }
+        #red{
+            background-color: green;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #blue{
+            background-color: aqua;
+        }
+        .btn{
+            color: white;
+            width: 60px;
+            text-align: center;
+            line-height: 35px;
+            height: 35px;
+            margin-left: 5px;
+            background-color: #002952 ;
+            text-decoration: none;
+            display: block;
+        }
+        #box2{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"><h1>请为下面的DIV设置样式：</h1><a href="#" id="sz">点击设置</a></div>
+    <div id="box1">
+
+    </div>
+    <div id="box2">
+        <div id="box3">
+            <div class="box1">请选择背景色：<a href="#" class="xy" id="red">红</a><a href="#" class="xy" id="yellow">黄</a><a href="#" class="xy" id="blue">蓝</a></div>
+            <div class="box1">请选择宽(PX)：<a href="#" class="xy" id="x200">200</a><a href="#" class="xy" id="x300">300</a><a href="#" class="xy" id="x400">400</a></div>
+            <div class="box1">请选择高(PX)：<a href="#" class="xy" id="y200">200</a><a href="#" class="xy" id="y300">300</a><a href="#" class="xy" id="y400">400</a></div>
+            <div class="box2"><a href="#" class="btn"  id="hf">恢复</a><a href="#" class="btn" id="qd">确定</a></div>
+        </div>
+    </div>
+</body>
+<script>
+    // 找属性
+    var oSz = document.getElementById('sz')
+    var oBox1 = document.getElementById('box1')
+    var oBox2 = document.getElementById('box2')
+    var oRed = document.getElementById('red')
+    var oYellow = document.getElementById('yellow')
+    var oBlue = document.getElementById('blue')
+    var oX200 = document.getElementById('x200')
+    var oX300 = document.getElementById('x300')
+    var oX400 = document.getElementById('x400')
+    var oY200 = document.getElementById('y200')
+    var oY300 = document.getElementById('y300')
+    var oY400 = document.getElementById('y400')
+    var oHf = document.getElementById('hf')
+    var oQd = document.getElementById('qd')
+    // 点击点击设置出现控制器
+    oSz.onclick = function(){
+        oBox2.style.display = 'block'
+    }
+    // 点击确定控制器消失
+    oQd.onclick = function(){
+        oBox2.style.display = 'none'
+    }
+    // 鼠标在红上面变色 离开变回颜色 点击后div变成红色
+    oRed.onmouseover = function(){
+        oRed.style.backgroundColor = 'red'
+    }
+    oRed.onmouseout = function(){
+        oRed.style.backgroundColor = ''
+    }
+    oRed.onclick = function(){
+        oBox1.style.backgroundColor = 'red'
+    }
+    // 鼠标在黄上面变色 离开变回颜色 点击后div变成黄色
+    oYellow.onmouseover = function(){
+        oYellow.style.backgroundColor = 'orange'
+    }
+    oYellow.onmouseout = function(){
+        oYellow.style.backgroundColor = ''
+    }
+    oYellow.onclick = function(){
+        oBox1.style.backgroundColor = 'yellow'
+    }
+    // 鼠标在蓝上面变色 离开变回颜色 点击后div变成蓝色
+    oBlue.onmouseover = function(){
+        oBlue.style.backgroundColor = 'purple'
+    }
+    oBlue.onmouseout = function(){
+        oBlue.style.backgroundColor = ''
+    }
+    oBlue.onclick = function(){
+        oBox1.style.backgroundColor = 'blue'
+    }
+    // 鼠标停在宽或高上变色
+    oX200.onmouseover = function(){
+        oX200.style.backgroundColor = 'brown'
+    }
+    oX200.onmouseout = function(){
+        oX200.style.backgroundColor = ''
+    }
+    oX300.onmouseover = function(){
+        oX300.style.backgroundColor = 'brown'
+    }
+    oX300.onmouseout = function(){
+        oX300.style.backgroundColor = ''
+    }
+    oX400.onmouseover = function(){
+        oX400.style.backgroundColor = 'brown'
+    }
+    oX400.onmouseout = function(){
+        oX400.style.backgroundColor = ''
+    }
+    oY200.onmouseover = function(){
+        oY200.style.backgroundColor = 'brown'
+    }
+    oY200.onmouseout = function(){
+        oY200.style.backgroundColor = ''
+    }
+    oY300.onmouseover = function(){
+        oY300.style.backgroundColor = 'brown'
+    }
+    oY300.onmouseout = function(){
+        oY300.style.backgroundColor = ''
+    }
+    oY400.onmouseover = function(){
+        oY400.style.backgroundColor = 'brown'
+    }
+    oY400.onmouseout = function(){
+        oY400.style.backgroundColor = ''
+    }
+    // 点击宽或高改变DIV的宽或高
+    oX200.onclick = function(){
+        oBox1.style.width = '200px'
+    }
+    oX300.onclick = function(){
+        oBox1.style.width = '300px'
+    }
+    oX400.onclick = function(){
+        oBox1.style.width = '400px'
+    }
+    oY200.onclick = function(){
+        oBox1.style.height = '200px'
+    }
+    oY300.onclick = function(){
+        oBox1.style.height = '300px'
+    }
+    oY400.onclick = function(){
+        oBox1.style.height = '400px'
+    }
+    // 点击恢复 全部恢复
+    oHf.onclick = function(){
+        oBox1.style.width = ''
+        oBox1.style.height = ''
+        oBox1.style.backgroundColor = ''
+    }
+</script>
+</html>

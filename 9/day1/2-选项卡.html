@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        img{
+            display: block;
+            margin: 30px 0;
+        }
+        .xxk > div{
+            display: none;
+        }
+        .xxk{
+            width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+        nav{
+            height: 50px;
+            display: flex;
+            
+        }
+        p{
+            text-align: center;
+            padding: 20px 0;
+            font-size: 25px;
+        }
+        .D1{
+            width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        .nav1{
+            padding: 0 15px;
+            line-height: 50px;
+            height: 50px;
+            text-align: center;
+            margin-left: 20px;
+        }
+        #D1{
+            display: block;
+        }
+        .nav1:first-child{
+            color: #ABE9B3;
+        }
+    </style>
+</head>
+<body>
+    <p>作品</p>
+    <div class="xxk">
+        <nav>
+            <a href="#" class="nav1" id="nav1">MobileUI</a>
+            <a href="#" class="nav1" id="nav2">网页设计</a>
+            <a href="#" class="nav1" id="nav3">海报设计</a>
+            <a href="#" class="nav1" id="nav4">标志设计</a>
+            <a href="#" class="nav1" id="nav5">字体设计</a>
+        </nav>
+        <div id="D1">
+            <div class="D1" >
+                <img src="img/w1.png" alt="">
+                <img src="img/w2.png" alt="">
+                <img src="img/w3.png" alt="">
+                <img src="img/w4.png" alt="">
+                <img src="img/w5.png" alt="">
+                <img src="img/w6.png" alt="">
+                <img src="img/w7.png" alt="">
+                <img src="img/w8.png" alt="">
+            </div>
+        </div>
+        <div id="D2"> 
+            <div class="D1" >
+                <img src="img/w9.png" alt="">
+                <img src="img/w10.png" alt="">
+                <img src="img/w11.png" alt="">
+                <img src="img/w12.png" alt="">
+                <img src="img/w13.png" alt="">
+                <img src="img/w14.png" alt="">
+                <img src="img/w15.png" alt="">
+                <img src="img/w16.png" alt="">
+            </div>
+        </div>
+        <div id="D3">
+            <div class="D1">
+                <img src="img/w17.png" alt="">
+                <img src="img/w18.png" alt="">
+                <img src="img/w19.png" alt="">
+                <img src="img/w20.png" alt="">
+                <img src="img/w21.png" alt="">
+                <img src="img/w22.png" alt="">
+                <img src="img/w23.png" alt="">
+                <img src="img/w24.png" alt="">
+            </div>
+        </div>
+        <div id="D4"">
+            <div class="D1">
+                <img src="img/w25.png" alt="">
+                <img src="img/w26.png" alt="">
+                <img src="img/w27.png" alt="">
+                <img src="img/w28.png" alt="">
+                <img src="img/w29.png" alt="">
+                <img src="img/w30.png" alt="">
+                <img src="img/w31.png" alt="">
+                <img src="img/w32.png" alt="">
+            </div>
+        </div>
+        <div id="D5">
+            <div class="D1" >
+                <img src="img/w33.png" alt="">
+                <img src="img/w34.png" alt="">
+                <img src="img/w35.png" alt="">
+                <img src="img/w36.png" alt="">
+                <img src="img/w37.png" alt="">
+                <img src="img/w38.png" alt="">
+                <img src="img/w39.png" alt="">
+                <img src="img/w40.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('nav1').onclick = function(){
+        document.getElementById('D1').style.display = 'block'
+        document.getElementById('D2').style.display = 'none'
+        document.getElementById('D3').style.display = 'none'
+        document.getElementById('D4').style.display = 'none'
+        document.getElementById('D5').style.display = 'none'
+        document.getElementById('nav1').style.color = '#ABE9B3'
+        document.getElementById('nav2').style.color = '#333'
+        document.getElementById('nav3').style.color = '#333'
+        document.getElementById('nav4').style.color = '#333'
+        document.getElementById('nav5').style.color = '#333'
+    }
+    document.getElementById('nav2').onclick = function(){
+        document.getElementById('D2').style.display = 'block'
+        document.getElementById('D1').style.display = 'none'
+        document.getElementById('D3').style.display = 'none'
+        document.getElementById('D4').style.display = 'none'
+        document.getElementById('D5').style.display = 'none'
+        document.getElementById('nav2').style.color = '#ABE9B3'
+        document.getElementById('nav1').style.color = '#333'
+        document.getElementById('nav3').style.color = '#333'
+        document.getElementById('nav4').style.color = '#333'
+        document.getElementById('nav5').style.color = '#333'
+    }
+    document.getElementById('nav3').onclick = function(){
+        document.getElementById('D3').style.display = 'block'
+        document.getElementById('D1').style.display = 'none'
+        document.getElementById('D2').style.display = 'none'
+        document.getElementById('D4').style.display = 'none'
+        document.getElementById('D5').style.display = 'none'
+        document.getElementById('nav3').style.color = '#ABE9B3'
+        document.getElementById('nav1').style.color = '#333'
+        document.getElementById('nav2').style.color = '#333'
+        document.getElementById('nav4').style.color = '#333'
+        document.getElementById('nav5').style.color = '#333'
+    }
+    document.getElementById('nav4').onclick = function(){
+        document.getElementById('D4').style.display = 'block'
+        document.getElementById('D1').style.display = 'none'
+        document.getElementById('D3').style.display = 'none'
+        document.getElementById('D2').style.display = 'none'
+        document.getElementById('D5').style.display = 'none'
+        document.getElementById('nav4').style.color = '#ABE9B3'
+        document.getElementById('nav1').style.color = '#333'
+        document.getElementById('nav3').style.color = '#333'
+        document.getElementById('nav2').style.color = '#333'
+        document.getElementById('nav5').style.color = '#333'
+    }
+    document.getElementById('nav5').onclick = function(){
+        document.getElementById('D5').style.display = 'block'
+        document.getElementById('D1').style.display = 'none'
+        document.getElementById('D3').style.display = 'none'
+        document.getElementById('D4').style.display = 'none'
+        document.getElementById('D2').style.display = 'none'
+        document.getElementById('nav5').style.color = '#ABE9B3'
+        document.getElementById('nav1').style.color = '#333'
+        document.getElementById('nav3').style.color = '#333'
+        document.getElementById('nav4').style.color = '#333'
+        document.getElementById('nav2').style.color = '#333'
+    }
+</script>
+</html>

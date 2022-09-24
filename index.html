@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>戏戏的主页</title>
    <style>
       body {
          margin: 0;
@@ -28,6 +28,8 @@
          justify-content: center;
          flex-wrap: wrap;
          line-height: 1.7;
+         background-color: bisque;
+         padding: 0 20px;
       }
 
       .dibu {
@@ -41,17 +43,62 @@
          font-size: 12px;
          align-items: center;
       }
+
+      a:hover {
+         color: brown;
+      }
+
       a{
          text-decoration: none;
-         color: chocolate;
+         color: purple;
       }
-      .container{
+      a img {
+         width: 50px;
+         vertical-align: middle;
+      }
+
+      .container {
          width: 760px;
          margin: 0 auto;
+         background-color: bisque;
       }
-      .container h1{
+
+      .container dd {
+         margin: 5px 0;
+      }
+
+      .container h1 {
+         width: 400px;
+         margin: 0 auto ;
+         display: flex;
+         justify-content: space-between;
+         color: white;
+      }
+      .container h1 span{
+         animation: guangying .8s ease-in-out infinite alternate-reverse;
+      }
+      .container h1 span:nth-child(n + 2){
+         animation-delay:.2s;
+      }
+      .container h1 span:nth-child( n + 3){
+         animation-delay:.4s;
+      }
+      .container h1 span:nth-child( n + 4){
+         animation-delay:.6s;
+      }
+      @keyframes guangying {
+         to {
+            color: #ff0266;
+            text-shadow: 20px 0 70px #ff0266;
+         }
+      }
+
+      h2 {
          text-align: center;
+         color: coral;
       }
+
+      .container h1 span {}
    </style>
 </head>
 
@@ -63,21 +110,27 @@
       <P>你们好，我是戏戏。我有一些社恐。</P>
       <p>我特别喜欢音乐、看小说，还有滑板哦，这是我的第一个个人网站，用于展示个人网站的编写和部署，我会非常努力的学习的。</p>
       <p>我相信我一定能够坚持学习下去。</p>
+
+      <div class="container">
+         <h1><span>我</span><span>的</span><span>作</span><span>业</span></h1>
+         <dl>
+            <dt>
+               <h2>九月</h2>
+            </dt>
+            <dt>
+               <h3>第一天</h3>
+            </dt>
+            <dd><a href="./9/day1/5-下拉菜单.html"><img src = "images/head.gif"/>下拉菜单(切换class属性值)</a></dd>
+            <dd><a href="./9/day1/1-控制字号.html"><img src = "images/head.gif"/>文章字号切换(切换class属性值)</a></dd>
+            <dd><a href="./9/day1/6-修改class属性改变页面样式.html"><img src = "images/head.gif"/>文章样式切换(切换class属性值)</a></dd>
+            <dd><a href="./9/day1/3-灯泡.html"><img src = "images/head.gif"/>开关灯(切换src属性值)</a></dd>
+            <dd><a href="./9/day1/4-修改class属性改变隐藏.html"><img src = "images/head.gif"/>开关按钮(切换class属性值)</a></dd>
+            <dd><a href="./9/day1/7-张三在哪？.html"><img src = "images/head.gif"/>张三在北京 (读取value属性值)</a></dd>
+            <dd><a href="./9/day1/9-控制面板.html"><img src = "images/head.gif"/>当前菜单(切换class属性值)</a></dd>
+            <dd><a href="./9/day1/2-选项卡.html"><img src = "images/head.gif"/>选项卡(切换class属性值)</a></dd>
+         </dl>
+      </div>
    </zhongjiande>
-   <div class="container">
-      <h1>我的作业</h1>
-      <dl>
-         <dt><h2>八月</h2></dt>
-         <dd>1.<a href="#">小米商城</a></dd>
-         <dd>2.<a href="#">太极图</a></dd>
-         <dd>3. <a href="#">钢琴</a></dd>
-         <dt><h2>九月</h2></dt>
-         <dd>1. <a href="#">天星数科</a></dd>
-         <dd>2. <a href="#">查找替换</a></dd>
-         <dd>3. <a href="#">轮播图</a></dd>
-         <dd>4. <a href="#">新浪轮播图</a></dd>
-      </dl>
-   </div>
    <dibubanquan class="dibu">
       <p>版权所有：duxingzhi.com</p>
       <a href="#">我的网站</a>

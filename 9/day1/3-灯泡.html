@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灯泡开关</title>
+    <style>
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <button id="on">开</button>
+    <button id="off">关</button>
+    <img id="on1" src="img/eg_bulbon.gif" alt="">
+    <img id="off1" src="img/eg_bulboff.gif" alt="">
+    
+</body>
+<script>
+    document.getElementById('on').onclick = function(){
+        document.getElementById('on1').style.display = 'block'
+        document.getElementById('off1').style.display = 'none'
+    }
+    document.getElementById('off').onclick = function(){
+        document.getElementById('off1').style.display = 'block'
+        document.getElementById('on1').style.display = 'none'
+    }
+</script>
+</html>

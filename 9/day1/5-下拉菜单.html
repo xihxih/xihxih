@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        #box2{
+            width: 130px;
+            text-align: center;
+            border: 1px solid black;
+            display: none;
+        }
+        p{
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">微博</div>
+    <div id="box2">
+        <p>私信</p>
+        <p>评论</p>
+        <p>@我</p>
+    </div>
+</body>
+<script>
+    document.getElementById('box1').onmouseover = function(){
+        document.getElementById('box1').style.backgroundColor = 'yellow'
+        document.getElementById('box2').style.display = 'block'
+        document.getElementById('box2').style.backgroundColor = 'yellow'
+    }
+    document.getElementById('box1').onmouseout = function(){
+        document.getElementById('box1').style.backgroundColor = ''
+        document.getElementById('box2').style.display = 'none'
+    }
+</script>
+</html>

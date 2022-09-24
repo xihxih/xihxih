@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            display: block;
+            color: black;
+            text-decoration: none;
+            
+        }
+        .container{
+            width: 600px;
+            height: 450px;
+            margin: 0 auto;
+            background-color: bisque;
+        }
+        .sp {
+            width: 600px;
+            height: 50px;
+            background-color: cadetblue;
+            display: flex;
+            justify-content: space-between;
+        }
+        .sp a:nth-child(1){
+            border-top: 3px solid orangered ;
+        }
+        .sp a{
+            width: 70px;
+            height: 50px;
+            /* background-color: brown; */
+            line-height: 40px;
+            text-align: center;
+            border-top: 3px solid transparent ;
+        }
+        .sl{
+            width: 600px;
+            height: 400px;
+            position: relative;
+        }
+        .box{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #by1{
+            background-color: bisque;
+        }
+        #box2{
+            display: none;
+        }
+        #box3{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sp">
+            <a href="#" target="_self" id="by1">唯一</a>
+            <a href="#"  target="_self" id="by2">予以</a>
+            <a href="#"  target="_self" id="by3">摄取</a>
+        </div>
+        <div class="sl">
+            <div class="box" id="box1">世界上总是存在着很多的不如意，但是这些不如意只会使我们更加的痛苦，人生来这个世界就是受苦的，早一点死亡是上天给你的恩赐，但晚一点死亡是你自己的决定。</div>
+            <div class="box" id="box2">sssssssssssssssssssssssssss世界上总是存在着很多的不如意，但是这些不如意只会使我们更加的痛苦，人生来这个世界就是受苦的，早一点死亡是上天给你的恩赐，但晚一点死亡是你自己的决定。</div>
+            <div class="box" id="box3">dddddddddddddddddddddddddddddd世界上总是存在着很多的不如意，但是这些不如意只会使我们更加的痛苦，人生来这个世界就是受苦的，早一点死亡是上天给你的恩赐，但晚一点死亡是你自己的决定。</div>
+        </div>
+    </div>
+</body>
+    <script>
+        document.getElementById('by1').onclick = function(){
+            document.getElementById('by1').style.backgroundColor = 'bisque'
+            document.getElementById('by2').style.backgroundColor = ''
+            document.getElementById('by3').style.backgroundColor = ''
+            document.getElementById('box1').style.display = 'block'
+            document.getElementById('box2').style.display = 'none'
+            document.getElementById('box3').style.display = 'none'
+            document.getElementById('by1').style.borderTop = '3px solid orangered'
+            document.getElementById('by2').style.borderTop = '3px solid transparent'
+            document.getElementById('by3').style.borderTop = '3px solid transparent'
+        }
+        document.getElementById('by2').onclick = function(){
+            document.getElementById('by2').style.backgroundColor = 'bisque'
+            document.getElementById('by1').style.backgroundColor = 'transparent'
+            document.getElementById('by3').style.backgroundColor = 'transparent'
+            document.getElementById('box2').style.display = 'block'
+            document.getElementById('box1').style.display = 'none'
+            document.getElementById('box3').style.display = 'none'
+            document.getElementById('by2').style.borderTop = '3px solid orangered'
+            document.getElementById('by1').style.borderTop = '3px solid transparent'
+            document.getElementById('by3').style.borderTop = '3px solid transparent'
+        }
+        document.getElementById('by3').onclick = function(){
+            document.getElementById('by3').style.backgroundColor = 'bisque'
+            document.getElementById('by2').style.backgroundColor = 'transparent'
+            document.getElementById('by1').style.backgroundColor = 'transparent'
+            document.getElementById('box3').style.display = 'block'
+            document.getElementById('box2').style.display = 'none'
+            document.getElementById('box1').style.display = 'none'
+            document.getElementById('by3').style.borderTop = '3px solid orangered'
+            document.getElementById('by2').style.borderTop = '3px solid transparent'
+            document.getElementById('by1').style.borderTop = '3px solid transparent'
+        }
+    </script>
+</html>
