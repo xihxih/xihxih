@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟微信</title>
+    <style>
+        .container {
+            width: 350px;
+            height: 500px;
+            background-color: beige;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        #win {
+            width: 320px;
+            height: 400px;
+            margin: 30px auto 0px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="win"></div>
+        <div>
+            <input type="text" id="msg">
+            <button id="btn">发送</button>
+        </div>
+    </div>
+</body>
+<script>
+    var oInput = document.getElementById('msg')
+    var oBtn = document.getElementById('btn')
+    var oDiv = document.getElementById('win')
+    var msg = ''
+
+    
+    oBtn.onclick = function () {
+        if (oInput.value == '') {
+            // window.alert('哥么，输入点东西吧')
+            oInput.style.outline = 'red solid 1px'
+        } else {
+            msg = oInput.value
+            oDiv.innerHTML = '<p>' + msg + '</p>' + oDiv.innerHTML
+            oInput.value = ''
+        }
+
+    }
+    oInput.onclick = function(){
+        oInput.style.outline = ''
+    }
+</script>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分数评估</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .box{
+            width: 350px;
+            height: 300px;
+            background-color: cadetblue;
+            border-radius: 30px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 2px 2px 20px #999;
+        }
+        #title{
+            margin: 30px 10px;
+            background-color: burlywood;
+            border-radius: 20px;
+            width: 320px;
+            height: 150px;
+        }
+        #btn{
+            margin: 20px 10px;
+            background-color: burlywood;
+            border-radius: 5px;
+            width: 320px;
+            height: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="title" value="" placeholder="请输入你的分数"><br>
+        <button id="btn">按钮</button>
+    </div>
+    <script>
+        var btn = document.getElementById('btn')
+        var title = document.getElementById('title')
+
+        btn.onclick = function(){
+            var num = title.value
+            console.log(num)
+            if(num <= 100 && num>=0 ){
+                if(num >=90){
+                window.alert('您的分数是：' + num + '太棒了')
+            }else if( num >=80){
+                window.alert('您的分数是：' + num + '很好')
+            }else if( num >=70){
+                window.alert('您的分数是：' + num + '成绩一般')
+            }else if( num >=60){
+                window.alert('您的分数是：' + num + '及格')
+            }else{
+                window.alert('您的分数是：' + num + '你要努力了')
+            }
+            }else{
+                window.alert('你能考100以上？不能还填！')
+            }
+            title.value = ''
+        }
+    </script>
+</body>
+</html>

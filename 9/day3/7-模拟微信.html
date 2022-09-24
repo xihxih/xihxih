@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>坚果微信聊天</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #5998A1;
+        }
+
+        .box {
+            width: 375px;
+            height: 700px;
+            background-color: #000000;
+            border: #ccc 6px solid;
+            box-shadow: 3px 3px 20px black;
+            border-radius: 20px;
+            margin: 0 auto;
+        }
+
+        .box1 {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #999;
+            margin: 10px auto;
+        }
+
+        .box2 {
+            height: 650px;
+            background-color: #ECECEC;
+            width: 355px;
+            margin: 0 auto;
+        }
+
+        .box3 {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1B1D1F;
+            color: #ECECEC;
+            height: 25px;
+            line-height: 25px;
+            font-size: 14px;
+        }
+
+        .box4 {
+            height: 50px;
+            background-color: #383A3E;
+            font-size: 22px;
+            line-height: 50px;
+            color: #ECECEC;
+        }
+
+        #box {
+            overflow: auto;
+            height: 525px;
+        }
+
+        .box5 {
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            align-items: center;
+        }
+
+        #title:focus {
+            outline: none;
+        }
+
+        #title {
+            width: 200px;
+            height: 30px;
+            border: none;
+            border-top: 1px solid hsl(150, 100%, 50%);
+            border-bottom: 1px solid hsl(150, 100%, 50%);
+        }
+
+        #btn {
+            text-align: center;
+            width: 70px;
+            background-color: hsl(150, 100%, 45%);
+            height: 30px;
+            line-height: 30px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .p {
+            overflow: hidden;
+            display: flex;
+        }
+
+        .p1 {
+            justify-content: flex-start;
+        }
+
+        .p2 {
+
+            flex-direction: row-reverse;
+        }
+
+        .p2 span {
+            margin-left: 50px;
+            background-color: chartreuse;
+        }
+
+        .p1 span {
+            margin-right: 50px;
+            background-color: white;
+        }
+
+        .p span {
+            padding: 5px 10px;
+            margin-top: 10px;
+            display: block;
+            overflow: hidden;
+            width: autos;
+            line-height: 25px;
+
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2">
+            <div class="box3">
+                <span>中国电信</span>
+                <span>3:24 PM</span>
+                <span>信号</span>
+            </div>
+            <div class="box4">
+                <p><span>←</span>小张</p>
+            </div>
+            <div id="box">
+
+            </div>
+            <div class="box5">
+                <img src="images/七七.jpg" id="img1" alt="">
+                <input type="text" id="title">
+                <div id="btn">发送</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    var otp = document.getElementById('img1')
+    var Title = document.getElementById('title')
+    var Box = document.getElementById('box')
+    var Btn = document.getElementById('btn')
+    var on = true
+    var Op = 'p1'
+
+    // 图片点击切换
+    otp.onclick = function () {
+        on ? otp.src = 'images/派蒙.jpg' : otp.src = 'images/七七.jpg'
+        on = !on
+        Op = on ? 'p1' : 'p2'
+    }
+
+    // 文字图片出现在 box里
+    Btn.onclick = function () {
+        if (Title.value == '') {
+
+        } else {
+            Box.innerHTML = Box.innerHTML + '<p class="p ' + Op + '">' + '<img src ="' + otp.src + '"><span>' + Title.value + '</span> </p>'
+            Title.value = ''
+        }
+
+    }
+
+</script>
+
+</html>

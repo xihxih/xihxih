@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>头像切换</title>
+    <style>
+        body {
+            background-color: bisque;
+        }
+
+        img {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            width: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/9.1/七七.jpg" id="img1" alt="">
+</body>
+<script>
+    // 获取元素
+    var otp = document.getElementById('img1')
+    var on = true
+    // 第一次点击图片切换另外一张
+
+    console.log(on)
+    otp.onclick = function () {
+        if (on) {
+            otp.src = '/9.1/派蒙.jpg'
+            on = false
+        } else {
+            otp.src = '/9.1/七七.jpg'
+            on = true
+        }
+    }
+    // otp.onclick = function () {
+    //     otp.src = '/9.1/派蒙.jpg'
+    //     on = false
+    // }
+</script>
+
+</html>

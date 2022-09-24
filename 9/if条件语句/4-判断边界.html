@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边界值</title>
+</head>
+<body>
+    <form action="">
+        <input type="button" id="on" value="-">
+        <input type="text" id="title" value="0">
+        <input type="button" id="down" value="+">
+    </form>
+</body>
+<script>
+    var On = document.getElementById('on')
+    var Tle = document.getElementById('title')
+    var Down = document.getElementById('down')
+    var num = 0
+
+    Down.onclick = function(){
+        if(num < 4){
+            num = num + 1
+            Tle.value = num
+        }else{
+            num = num
+            Tle.value = num
+        }
+    }
+    on.onclick = function(){
+        if(num > 0){
+            num = num - 1
+            Tle.value = num
+        }else{
+            num = num
+            Tle.value = num
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体控制</title>
+</head>
+<body>
+    <button id="on">加</button>
+    <button id="down">减</button>
+    <div id="box">
+        hjsaljkhsaklhjasklhsklahklashklsahk
+    </div>
+    <script>
+        var on = document.getElementById('on')
+        var down = document.getElementById('down')
+        var Box = document.getElementById('box')
+        var num = 16
+        on.onclick = function(){
+        if(num < 28){
+            num = num + 2
+            Box.style.fontSize = num+'px'
+            }else {
+                num = num
+                Box.style.fontSize = num+ 'px'
+        }
+    }
+    down.onclick = function(){
+        if(num > 12){
+            num = num - 2
+            Box.style.fontSize = num+'px'
+            }else {
+                num = num
+                Box.style.fontSize = num+ 'px'
+        }
+    }
+    </script>
+</body>
+</html>
