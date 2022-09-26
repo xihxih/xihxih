@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #nb div{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color:salmon ;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="nb">
+
+    </div>
+    
+
+    <script>
+        
+        
+        var num = 0
+        var text = ''
+        var left = ''
+        var top1 = ''
+        // 目标：点击按钮生成由5个div组成的V字
+        // step1：获取button和div元素
+        var nb = document.getElementById('nb')
+        var btn = document.getElementById('btn')
+        // step2：为button添加点击事件
+        btn.onclick = function(){
+            // step3：用for循环生成5个div
+            for( var i = 0 ; i < 5 ; i++){
+                left = i*50 + 'px'
+                if(i <= 2){
+                    top1 = i*50 + 'px'
+                }else{
+                    top1 = (4-i)*50 + 'px'
+                }
+                
+                text = text + '<div style = "left : ' + left +';top:'+ top1 +'">' + i + '</div>'
+            }
+            // step4；把text写入div里
+            nb.innerHTML = text
+            console.log(text)
+        }
+    </script>
+</body>
+</html>

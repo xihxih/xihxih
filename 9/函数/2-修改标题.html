@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改文本的值</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 40px;
+            vertical-align: middle;
+        }
+
+        .box1 {
+            height: 40px;
+            line-height: 40px;
+            background-color: aquamarine;
+        }
+
+        .box2,
+        .box3 {
+            height: 50px;
+            line-height: 50px;
+            position: relative;
+        }
+
+        button {
+            border: none;
+            color: burlywood;
+            margin: 0 10px;
+            background-color: white;
+        }
+
+        .hide2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box2 div {
+            display: none;
+            overflow: hidden;
+        }
+
+        .box3 div {
+            display: none;
+            overflow: hidden;
+        }
+
+        .box2 .hide {
+            display: block;
+        }
+
+        .box3 .hide {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">分类名称</div>
+        <div class="box2">
+            <div class="hide"><span>公司新闻</span><button class="btn2"><img src="hand.gif" alt=""></button></div>
+            <div class="hide2"><input type="text" value=""><button class="btn1">保存<button class="btn3">取消</button></div>
+        </div>
+        <div class="box3">
+            <div class="hide"><span>产品分类</span><button class="btn2"><img src="hand.gif" alt=""></button></div>
+            <div class="hide2"><input type="text" value=""><button class="btn1">保存<button class="btn3 ">取消</button></div>
+        </div>
+
+    </div>
+    <script>
+
+        var txt = document.querySelectorAll('span')
+        var value = document.querySelectorAll('input')
+        var btn = document.querySelectorAll('.btn1')
+        var btn2 = document.querySelectorAll('.btn2')
+        var btn1 = document.querySelectorAll('.btn3')
+        var hide1 = document.querySelectorAll('.hide2')
+        var hide = document.querySelectorAll('.hide')
+        var text = ''
+
+
+        for (let i = 0; i < btn2.length; i++) {
+            btn2[i].onclick = function () {
+                text = txt[i].innerHTML
+                hide1[i].className = 'hide2 hide'
+                hide[i].className = ''
+                value[i].value = txt[i].innerHTML
+            }
+            btn[i].onclick = function(){
+                hide1[i].className = 'hide2'
+                hide[i].className = 'hide'
+                txt[i].innerHTML = value[i].value
+            }
+            btn1[i].onclick = function(){
+                hide1[i].className = 'hide2'
+                hide[i].className = 'hide'
+                txt[i].innerHTML = text
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

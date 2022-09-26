@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <ul id="new">
+
+    </ul>
+    
+    
+    <script>
+        var arr = [
+        '俄罗斯“断气”令欧洲各行业叫苦不迭，德媒预警将会',
+            '[法甲]布雷斯特1-1斯特拉斯堡',
+            '[男篮欧洲杯]法国78-74匈牙利',
+            '[法甲]克莱蒙2-0图卢兹',
+            '[法甲]蒙彼利埃1-3里尔',
+        ]
+        var btn = document.getElementById('btn')
+        var ul = document.getElementById('new')
+        btn.onclick = function(){
+            var text = ''
+            for(var i = 0 ; i < arr.length ; i++){
+                text = text + '<li>' + arr[i] + '</li>'
+            }
+            ul.innerHTML = text
+        }
+    </script>
+</body>
+</html>

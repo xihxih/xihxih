@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        td img {
+            width: 100px;
+            height: 100px;
+        }
+
+        td input {
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>全选</th>
+                <th colspan="2">商品</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tfoot>
+            <td colspan="7">全选删除选中的商品已选择3件商品 总价：￥<span class="zj"></span> 去结算</td>
+        </tfoot>
+    </table>
+
+    <script>
+        var title = [
+            '家乐鸡精调味料 600g 联合利华出品',
+            '水塔 醋 4度陈醋2.3L山西特产',
+            '中盐 低钠盐 食盐 250g',
+            '王守义十三香45g炒菜炖肉拌菜腌制调味料 中华老字号',
+            '太太乐 鸡精 三鲜调味料 加倍提鲜 227g 雀巢出品',
+            '海天黄豆酱340g 豆瓣酱原味调味品调料酱 甜味酱 拌饭拌面下饭酱蘸料酱炒',
+            '京糖 JINGTANG 优级绵白糖 500g 中华老字号 北京糖酒集团出品',
+            '海天 酱油 味极鲜特级生抽 1.9L 中华老字号'
+        ]
+        var tu = [
+            'images/1jljj.jpg',
+            'images/2stcc2.jpg',
+            'images/3zydny.jpg',
+            'images/413x.jpg',
+            'images/5ttljj.jpg',
+            'images/6htdbj.jpg',
+            'images/7bt.jpg',
+            'images/8htjy.jpg'
+
+        ]
+        var num = [
+            '14.9',
+            '15.6',
+            '3.5',
+            '4.5',
+            '10.9',
+            '8.4',
+            '8.6',
+            '25.9'
+        ]
+
+        var text = ''
+        for (var i = 0; i < tu.length; i++) {
+            var text = text + `<tr>
+                    <td><input type = "checkbox" name = 'dx'></td>
+                    <td><img src = "${tu[i]}"/></td>
+                    <td>${title[i]}</td>
+                    <td class="dj">${num[i]}</td>
+                    <td><button class="btn1">-</button><input class="sl" type="text" value = "1"><button class="btn2">+</button></td>
+                    <td class="xj"></td>
+                    <td>删除</td>
+                </tr> `
+        }
+        document.querySelector('tbody').innerHTML = text
+
+
+        //增加点击加和减少会改变效果
+
+        var abtn1 = document.querySelectorAll('.btn1')
+        var abtn2 = document.querySelectorAll('.btn2')
+        var adj = document.querySelectorAll('.dj')
+        var asl = document.querySelectorAll('.sl')
+        var axj = document.querySelectorAll('.xj')
+        var ozj = document.querySelector('.zj')
+        var oqj = ''
+        
+        
+        for(var b = 0 ; b < 8 ; b++){
+            zhengjia (b)
+            jianshao (b)
+            oqj = (oqj*1 + num[b]*1).toFixed(2)
+            ozj.innerHTML = oqj 
+        }
+           
+            function zhengjia(b){
+                
+                axj[b].innerHTML = adj[b].innerHTML*asl[b].value
+                abtn2[b].onclick = function () {
+                
+                if (asl[b].value == 10) {
+
+                } else {
+                 asl[b].value = asl[b].value*1 + 1   
+                 axj[b].innerHTML= (adj[b].innerHTML*asl[b].value).toFixed(1)
+                 ozj.innerHTML = oqj*1
+                 oqj = (oqj*1 + num[b]*1).toFixed(2)
+                ozj.innerHTML = oqj 
+                
+                }
+                
+        }
+     }
+          
+     function jianshao(b){
+                
+                axj[b].innerHTML = adj[b].innerHTML*asl[b].value
+                abtn1[b].onclick = function () {
+                
+                if (asl[b].value == 1) {
+
+                } else {
+                 asl[b].value = asl[b].value*1 - 1   
+                 axj[b].innerHTML= (adj[b].innerHTML*asl[b].value).toFixed(1)
+                 ozj.innerHTML = oqj*1
+                 oqj = (oqj*1 - num[b]*1).toFixed(2)
+                ozj.innerHTML = oqj 
+                
+                }
+                
+        }
+     }
+        
+    </script>
+</body>
+
+</html>

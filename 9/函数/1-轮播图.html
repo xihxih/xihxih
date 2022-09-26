@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 640px;
+            height: 340px;
+            border: 3px solid black;
+            position: relative;
+            transform: translate(50%, 50%);
+            overflow: hidden;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 20%);
+        }
+
+        .box1 {
+            width: 50px;
+            height: 50px;
+            flex-direction: column;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .box2 {
+            cursor: pointer;
+            padding-bottom: 25px;
+            flex-direction: column;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            padding-top: 25px;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            align-items: center;
+        }
+
+        .box3 {
+            width: 150px;
+            height: 20px;
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #yd1 {
+            background-color: red;
+        }
+
+        .box4 {
+            cursor: pointer;
+            width: 20px;
+            height: 5px;
+            background-color: white;
+            margin-top: 5px;
+            transform: skewX(20deg);
+        }
+
+        #p {
+            margin-bottom: 0;
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <div class="box1" id="xia"><img src="prev.png" alt=""><span id="span1">1/5</span></div>
+        <div class="box2" id="shang"><img src="next.png" alt=""><span id="span2">1/5</span></div>
+        <p id="p">[英超]莱斯特城0-1曼联</p>
+        <div class="box3">
+            <div class="box4" id="yd1"></div>
+            <div class="box4" id="yd2"></div>
+            <div class="box4" id="yd3"></div>
+            <div class="box4" id="yd4"></div>
+            <div class="box4" id="yd5"></div>
+        </div>
+        <img src="aaa.jpg" id="tp" alt="">
+    </div>
+</body>
+<script>
+    var Y1 = document.getElementById('yd1')
+    var Y2 = document.getElementById('yd2')
+    var Y3 = document.getElementById('yd3')
+    var Y4 = document.getElementById('yd4')
+    var Y5 = document.getElementById('yd5')
+
+    var Tp = document.getElementById('tp')
+    var Xia = document.getElementById('xia')
+    var Shang = document.getElementById('shang')
+    var P = document.getElementById('p')
+    var sp1 = document.getElementById('span1')
+    var sp2 = document.getElementById('span2')
+    var arr = ['aaa.jpg', 'bbb.jpg', 'ccc.jpg', 'ddd.jpg', 'eee.jpg']
+    var sz = ['1/5', '2/5', '3/5', '4/5', '5/5']
+    var bt = [
+        '[英超]莱斯特城0-1曼联',
+        '[中超联赛]沧州雄狮0-0上海海港',
+        '[中超联赛]大连人5-1深圳队',
+        '[美网女单]袁悦2-0晋级',
+        '图集-2022F1荷兰大奖赛周四扫描'
+    ]
+    var num = 0
+
+    function blockcolor() {
+        if (num == 0) {
+            Y1.style.backgroundColor = 'red'
+            Y2.style.backgroundColor = 'white'
+            Y3.style.backgroundColor = 'white'
+            Y4.style.backgroundColor = 'white'
+            Y5.style.backgroundColor = 'white'
+        } else if (num == 1) {
+            Y1.style.backgroundColor = 'white'
+            Y2.style.backgroundColor = 'red'
+            Y3.style.backgroundColor = 'white'
+            Y4.style.backgroundColor = 'white'
+            Y5.style.backgroundColor = 'white'
+        } else if (num == 2) {
+            Y1.style.backgroundColor = 'white'
+            Y2.style.backgroundColor = 'white'
+            Y3.style.backgroundColor = 'red'
+            Y4.style.backgroundColor = 'white'
+            Y5.style.backgroundColor = 'white'
+        } else if (num == 3) {
+            Y1.style.backgroundColor = 'white'
+            Y2.style.backgroundColor = 'white'
+            Y3.style.backgroundColor = 'white'
+            Y4.style.backgroundColor = 'red'
+            Y5.style.backgroundColor = 'white'
+        } else {
+            Y1.style.backgroundColor = 'white'
+            Y2.style.backgroundColor = 'white'
+            Y3.style.backgroundColor = 'white'
+            Y4.style.backgroundColor = 'white'
+            Y5.style.backgroundColor = 'red'
+        }
+    }
+    function shang(){
+        if (num == 4) {
+            num = 0
+            Tp.src = arr[num]
+            P.innerHTML = bt[num]
+            sp1.innerHTML = sz[num]
+            sp2.innerHTML = sz[num]
+            blockcolor()
+
+        } else {
+            num++
+            Tp.src = arr[num]
+            P.innerHTML = bt[num]
+            sp1.innerHTML = sz[num]
+            sp2.innerHTML = sz[num]
+            blockcolor()
+        }
+    }
+    Shang.onclick = function () {
+        // if (num == 4) {
+        //     num = 0
+        //     Tp.src = arr[num]
+        //     P.innerHTML = bt[num]
+        //     sp1.innerHTML = sz[num]
+        //     sp2.innerHTML = sz[num]
+        //     blockcolor()
+
+        // } else {
+        //     num++
+        //     Tp.src = arr[num]
+        //     P.innerHTML = bt[num]
+        //     sp1.innerHTML = sz[num]
+        //     sp2.innerHTML = sz[num]
+        //     blockcolor()
+        // }
+        shang()
+    }
+
+    Xia.onclick = function() {
+        if (num == 0) {
+            num = 4
+            Tp.src = arr[num]
+            P.innerHTML = bt[num]
+            sp1.innerHTML = sz[num]
+            sp2.innerHTML = sz[num]
+            blockcolor()
+        }else {
+            num--
+            Tp.src = arr[num]
+            P.innerHTML = bt[num]
+            sp1.innerHTML = sz[num]
+            sp2.innerHTML = sz[num]
+            blockcolor()
+        }
+    }
+
+    Y1.onmouseover = function() {
+        Tp.src = arr[0]
+
+        num = 0
+        sp1.innerHTML = sz[num]
+        sp2.innerHTML = sz[num]
+        blockcolor()
+        P.innerHTML = bt[num]
+    }
+    Y2.onmouseover = function() {
+        Tp.src = arr[1]
+
+        num = 1
+        sp1.innerHTML = sz[num]
+        sp2.innerHTML = sz[num]
+        blockcolor()
+        P.innerHTML = bt[num]
+    }
+    Y3.onmouseover = function() {
+        Tp.src = arr[2]
+        num = 2
+        sp1.innerHTML = sz[num]
+        sp2.innerHTML = sz[num]
+        blockcolor()
+        P.innerHTML = bt[num]
+    }
+    Y4.onmouseover = function() {
+        Tp.src = arr[3]
+        num = 3
+        sp1.innerHTML = sz[num]
+        sp2.innerHTML = sz[num]
+        blockcolor()
+        P.innerHTML = bt[num]
+    }
+    Y5.onmouseover = function() {
+        Tp.src = arr[4]
+        num = 4
+        sp1.innerHTML = sz[num]
+        sp2.innerHTML = sz[num]
+        blockcolor()
+        P.innerHTML = bt[num]
+    }
+</script>
+
+</html>

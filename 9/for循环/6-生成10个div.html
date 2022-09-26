@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            width: 50px;
+            height: 50px;
+            margin-top: 20px;
+            background-color: aqua;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #nb{
+            width: 1000px;
+            height: 1000px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="nb">
+
+    </div>
+    
+
+    <script>
+        var nb = document.getElementById('nb')
+        var btn = document.getElementById('btn')
+        var div = ''
+        var num = 0
+        var left = ''
+        var col = ['red','yellow','purple','green']
+
+        btn.onclick = function(){
+            for( var i = 1 ; i< 11 ; i++){
+                left = 50*i + 'px'   
+                div = div + '<div class="div div' + num + '" style ="left:' + left +';background-color:' + col[i%4] + '">'+ i + '</div>'
+                nb.innerHTML = div
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #nb div{
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #nb{
+            width: 1090px;
+            height: 1000px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="nb">
+
+    </div>
+    
+
+    <script>
+        var nb = document.getElementById('nb')
+        var btn = document.getElementById('btn')
+        var text =''
+        var num = 0
+        var left = ''
+        var top1 = ''
+        var col = ['red','green','yellow','pink']
+
+        btn.onclick = function(){
+            for(var i = 0 ; i < 10 ; i++){
+                var top1 = 100*i + 'px'
+                for(var o = 0; o < 10 ; o++){
+                    num++
+                    var left = 100*o + 'px'
+                    text = text + '<div style="top:' + top1 + ';left:' + left +';background-color:'+ col[num%4] +  '">' + num + '</div>'
+                }
+            }nb.innerHTML = text
+        }
+    
+    </script>
+</body>
+</html>

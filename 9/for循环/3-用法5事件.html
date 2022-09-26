@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        li{
+            background-color: gold;
+            margin:10px 0;
+            height:50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+</head>
+<body>
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+    </ul>
+    
+    <script type="text/javascript">
+        var oUl = document.querySelector('ul')
+        var aLi = oUl.querySelectorAll('li')
+        for(let i=0;i<aLi.length;i++ ){
+            aLi[i].onclick = function(){alert(i)}
+            // aLi[0].onclick = function(){alert(0)}
+            // aLi[1].onclick = function(){alert(1)}
+            // aLi[2].onclick = function(){alert(2)}
+        }
+    </script>
+</body>
+</html>
