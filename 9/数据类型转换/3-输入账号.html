@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <label for="">请输入QQ号码：</label>
+        <input type="text" class="text" value="">&nbsp;
+        <button>判断</button>
+        <br />
+        1、有没有输入<br />
+        2、输入的是不是数字<br />
+        3、不能有0在前面<br />
+        4、不能是小数<br />
+        5、输入的数字必须在5位以上、10位以内<br />
+    </form>
+    <div class="box">
+
+    </div>
+    <script>
+        var text = document.querySelector('.text')
+        var btn = document.querySelector('button')
+        btn.onclick = function () {
+            txt = text.value
+            if (txt == '') {
+                window.alert('请输入内容')
+                text.value = ''
+            } else if (parseFloat(txt) != parseInt(txt) && parseFloat(txt) == Number(txt)) {
+                window.alert('请不要输入小数点')
+                text.value = ''
+            } else if (parseInt(txt) == parseFloat(txt) && parseInt(txt) != Number(txt) || parseInt(txt) != parseFloat(txt) && parseInt(txt) != Number(txt)) {
+                window.alert('请输入数字')
+                text.value = ''
+            } else if (txt.split('').length < 5) {
+                window.alert('您至少得输入5位数')
+                text.value = ''
+            } else {
+
+            }
+            console.log(parseInt(txt), parseFloat(txt), Number(txt))
+        }
+    </script>
+</body>
+
+</html>

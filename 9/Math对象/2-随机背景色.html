@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            /* transition: .2s; */
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var btn1 = document.querySelectorAll('button')[0]
+            var btn2 = document.querySelectorAll('button')[1]
+
+            var body = document.querySelector('body')
+            var col = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+            var timer = null
+
+            bgcol()
+
+            function bgcol() {
+                var color = '#'
+                for (var i = 0; i < 6; i++) {
+                    color += col[Math.floor(Math.random() * 16)]
+                }
+                body.style.background = `${color}`
+            }
+            timer = window.setInterval(bgcol, 1000)
+
+            // btn1.onclick = function(){
+            //     bgcol()
+            // }
+
+            btn1.onclick = function () {
+                window.clearInterval(timer)
+                timer = window.setInterval(bgcol, 1000)
+            }
+            btn2.onclick = function () {
+                window.clearInterval(timer)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>开了</button>
+    <button>停了</button>
+</body>
+
+</html>

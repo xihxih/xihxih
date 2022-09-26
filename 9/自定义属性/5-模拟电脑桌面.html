@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #0D686B;
+        }
+
+        img {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/normal1.png" alt="">
+    <img src="images/normal2.png" alt="">
+    <img src="images/normal3.png" alt="">
+
+    <script>
+        var arr = ['images/active1.png', 'images/active2.png', 'images/active3.png']
+        var arr2 = ['images/normal1.png', 'images/normal2.png', 'images/normal3.png']
+        var img = document.querySelectorAll('img')
+        var last = 0
+
+        for (var i = 0; i < img.length; i++) {
+           
+            img[i].selected = false
+            img[i].index = i
+
+            img[i].onclick = function () {
+                if (this.selected) {
+                   
+                    this.src = arr2[this.index]
+                    
+                } else {
+                     //8 清除上一个
+                    img[last].src = arr2[img[last].index]
+                    img[last].selected =false
+                    this.src = arr[this.index]
+                    //修改当前this改为last
+                    last = this.index
+                }
+                this.selected = !this.selected
+            }
+        }
+    </script>
+</body>
+
+</html>

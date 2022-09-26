@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            
+        }
+        body{
+            background: url('images/1.gif');
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn1 = document.querySelector('.b1')
+            var btn2 = document.querySelector('.b2')
+            console.log(btn2)
+            var bg = document.querySelector('body')
+            var n = 0
+
+            var tp = ['images/1.gif', 'images/2.gif', 'images/3.gif', 'images/4.gif']
+
+            function setTp() {
+                if (n == 4) {
+                    n = 0
+                    bg.style.background = `url(${tp[n]})`
+                    n++
+                } else {
+                    bg.style.background = `url(${tp[n]})`
+                    n++
+                }
+
+            }
+
+            var time = window.setInterval(setTp,1000)
+            console.log(time)
+
+
+            btn1.onclick = function(){
+                time = window.setInterval(setTp,1000)
+            }
+            btn2.onclick = function(){
+                window.clearInterval(time)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button class="b1">开始</button>
+    <button class="b2">停止</button>
+</body>
+
+</html>

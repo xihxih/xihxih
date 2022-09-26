@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 2px black solid;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .bg {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn">男</div>
+    <div class="btn">女</div>
+    <div class="btn">不明</div>
+
+    <script>
+        //获取元素
+        var div = document.querySelectorAll('div')
+
+        //为三个div添加点击事件
+        for (let i = 0; i < div.length; i++) {
+            //5创建一个条件变量
+            div[i].add = false //默认没有bg
+            div[i].onclick = function () {
+                if (this.add) {
+                    this.className = 'btn'
+                } else {
+                    //清除所有div的bg
+                    for (var j = 0; j < div.length; j++) {
+                        div[j].add = false
+                        div[j].className = 'btn'
+                    }
+                    this.className = 'btn bg'
+                }
+                this.add = !this.add
+            }
+        }
+    </script>
+</body>
+
+</html>

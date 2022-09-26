@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>按钮</button>
+    <script>
+        var oInput = document.querySelector('input')
+        var oBtn = document.querySelector('button')
+        var txt = ''
+        oBtn.onclick = function(){
+            txt = oInput.value
+            
+            if(parseInt(txt) == parseFloat(txt)){
+                alert('您输入的是整数')
+            } else {
+                alert('您输入的是小数')
+            }
+        }
+    </script>
+</body>
+</html>

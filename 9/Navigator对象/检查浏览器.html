@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        img{
+            margin:  0 auto;
+            width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        console.dir(navigator.userAgent)
+        var str = navigator.userAgent
+        var bd = document.body
+
+        if(str.match('Firefox')){
+            window.alert('掉毛你用的火狐浏览器')
+            bd.innerHTML = `<img src = "../素材/作业2图片/firefox.png" />`
+        }else if(str.match('Edg')){
+            window.alert('掉毛你用的Edge浏览器')
+            bd.innerHTML = `<img src = "../素材/作业2图片/edge.png" />`
+        }else if(str.match('Chrome')){
+            window.alert('掉毛你用的谷歌浏览器')
+            bd.innerHTML = `<img src = "../素材/作业2图片/chrome.png" />`
+        }else if(str.match('Safari')){
+            window.alert('掉毛你用的苹果浏览器')
+            bd.innerHTML = `<img src = "../素材/作业2图片/safari.png" />`
+        }else{
+            window.alert('哇，兄弟你用的浏览器一定是一个特别牛逼的浏览器，我都不用的')
+        }
+    </script>
+</body>
+</html>

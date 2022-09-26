@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>0</button>
+    <button>0</button>
+    <button>0</button>
+    
+    <script>
+        var arr = ['a','b','c','d']
+        var btn = document.querySelectorAll('button')
+        
+        //批量添加a
+
+
+        for(var i = 0 ; i < btn.length ; i++){
+            btn[i].innerHTML = arr[0]
+
+            //批量添加点击事件
+            btn[i].num = 0
+            btn[i].onclick = function(){
+                if(this.num == 3){
+                    this.num = 0
+                    this.innerHTML = arr[this.num]
+                }else{
+                this.num = this.num  + 1
+                this.innerHTML = arr[this.num]
+                }
+            }
+        }
+    </script>
+</body>
+</html>

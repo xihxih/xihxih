@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3642204_u5n8zvfrz5d.css">
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #qq {
+            width: 432px;
+            height: 882px;
+            background-image: linear-gradient(to right, #4C8BFF, #1FD1FE);
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .container .topbar {
+            width: 402px;
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 15px;
+        }
+
+        .container .topbar .shortcuts {
+            width: 220px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container .topbar .btns {
+            width: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container .topbar i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .info {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 10px;
+            padding: 0 15px;
+            align-items: flex-start;
+        }
+
+        .info .avatar {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .info .avatar img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+        }
+
+        .info .avatar .online {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #08F175;
+            position: absolute;
+            right: 0px;
+            bottom: 8px;
+            z-index: 2;
+        }
+
+        .personal-info strong {
+            font-size: 24px;
+            color: white;
+        }
+
+        .personal-info p:first-child {
+            margin: 10px 0;
+        }
+
+        .personal-info p:first-child span:nth-child(2) {
+            color: #E9ED31;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 0 5px;
+
+        }
+
+        .personal-info p:first-child span:nth-child(3) {
+            background-color: #A4A5A5;
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            padding: 0 3px;
+            border-radius: 2px;
+        }
+
+        .personal-info p:last-child {
+            color: white;
+        }
+
+
+        #input {
+            width: 432px;
+            height: 50px;
+            border: none;
+            background-color: rgba(255, 255, 255, .5);
+            font-size: 20px;
+            line-height: 50px;
+            padding-left: 50px;
+            color: white;
+        }
+
+        .search {
+            position: relative;
+        }
+
+        .search::before {
+            content: '';
+            color: rgba(255, 255, 255, .7);
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            display: block;
+            background-image: url('images/search.svg');
+            width: 30px;
+            background-size: 30px;
+            height: 30px;
+
+        }
+
+        #input::placeholder {
+            color: rgba(255, 255, 255, .7);
+        }
+
+        #input:focus {
+            outline: none
+        }
+
+
+        section {
+            background-color: white;
+            height: 678px;
+            width: 432px;
+            overflow: hidden;
+
+        }
+
+        .nav::before {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            content: '';
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            background-color: #ccc;
+        }
+
+        .nav {
+            width: 432px;
+            height: 61px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            /* border-bottom: 1px solid #bbb; */
+        }
+
+        .nav div {
+            width: 30%;
+            height: 60px;
+            line-height: 60px;
+            font-size: 24px;
+            text-align: center;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .nav .tt {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 2px;
+            transition: .3s;
+            background-color: #1FD1FE;
+        }
+
+        .view {
+            position: relative;
+        }
+
+        .view .xinxi {
+            width: 1296px;
+            height: 617px;
+            display: flex;
+            justify-content: flex-start;
+            position: absolute;
+            left: 0px;
+            top: 62px;
+            transition: .3s;
+        }
+
+        .view .xx-1 {
+            width: 432px;
+            height: 617px;
+            overflow: auto;
+        }
+
+        .view .lxr-1 {
+            width: 432px;
+            height: 617px;
+            overflow: auto;
+        }
+
+        .view .kj-1 {
+            width: 432px;
+            height: 617px;
+            overflow: auto;
+        }
+
+        .view .xx-1 .xx-1-a .xx-1-b {
+            display: flex;
+            justify-content: flex-start;
+            height: 70px;
+            padding: 10px 6px;
+            width: 400px;
+        }
+
+        .view .lxr-1 .lxr-1-a .lxr-1-b {
+            display: flex;
+            justify-content: flex-start;
+            height: 70px;
+            padding: 10px 6px;
+            width: 400px;
+        }
+
+        .view .kj-1 .kj-1-a .kj-1-b {
+            display: flex;
+            justify-content: flex-start;
+            height: 70px;
+            padding: 10px 6px;
+            width: 400px;
+        }
+
+        .view .xx-1 .xx-1-a .xx-1-b img {
+            margin: 0 20px;
+            border-radius: 50%;
+        }
+
+        .view .lxr-1 .lxr-1-a .lxr-1-b img {
+            margin: 0 20px;
+            border-radius: 50%;
+        }
+
+        .view .kj-1 .kj-1-a .kj-1-b img {
+            margin: 0 20px;
+            border-radius: 50%;
+        }
+
+        .view .xx-1 .xx-1-a .xx-1-b p {
+            height: 30px;
+            line-height: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 320px;
+        }
+
+        .view .lxr-1 .lxr-1-a .lxr-1-b p {
+            height: 30px;
+            line-height: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 320px;
+        }
+
+        .view .kj-1 .kj-1-a .kj-1-b p {
+            height: 30px;
+            line-height: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 320px;
+        }
+
+        .view .xx-1 .xx-1-a .xx-1-b p span:first-child {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .view .xx-1 .xx-1-a .xx-1-b p span:last-child {
+            font-size: 20px;
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        .view .lxr-1 .lxr-1-a .lxr-1-b p span:first-child {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .view .lxr-1 .lxr-1-a .lxr-1-b p span:last-child {
+            font-size: 20px;
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        .view .kj-1 .kj-1-a .kj-1-b p span:first-child {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .view .kj-1 .kj-1-a .kj-1-b p span:last-child {
+            font-size: 20px;
+            color: #aaa;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="qq">
+        <header>
+            <div class="container">
+                <div class="topbar">
+                    <div class="logo">
+                        <i class="iconfont icon-QQ" style="font-size: 26px; color:rgba(200,200,200,.8)"></i>
+                    </div>
+                    <div class="shortcuts">
+                        <i class="iconfont icon-email-fill" style="font-size: 30px;"></i>
+                        <i class="iconfont icon-qzone"></i>
+                        <i class="iconfont icon-fuzhuang-Txu" style="font-size: 26px;"></i>
+                        <i class="iconfont icon-message_1"></i>
+                        <i class="iconfont icon-gengduo-shuxiang"></i>
+                    </div>
+                    <div class="btns">
+                        <i class="iconfont icon-zuixiaohua"></i>
+                        <i class="iconfont icon-guanbi"></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="avatar">
+                        <img src="./images/head3_100x100@2x.gif" alt="">
+                        <div class="online"></div>
+                    </div>
+                    <div class="personal-info">
+                        <p>
+                            <strong>村长</strong><span>LV4S</span><span>VIP</span>
+                        </p>
+                        <p>走别人的路，让别人无路可走。</p>
+                    </div>
+                </div>
+                <div class="search">
+                    <input type="search" name="" id="input" placeholder="搜索">
+                </div>
+            </div>
+        </header>
+        <section class="view">
+            <div class="nav">
+                <div class="xx">消息</div>
+                <div class="lxr">联系人</div>
+                <div class="kj">空间</div>
+                <div class="tt"></div>
+            </div>
+            <div class="xinxi">
+                <div class="xx-1">
+                    <ul class="xx-1-a">
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="xx-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lxr-1">
+                    <ul class="lxr-1-a">
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="lxr-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="kj-1">
+                    <ul class="kj-1-a">
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                        <li class="kj-1-b"><img src="images/touxiang.jpg" width="70px" />
+                            <p><span>如梦似幻</span><span>3-15</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </div>
+    <script>
+        // 控制点击效果,获取元素
+        var xx = document.querySelector('.xx')
+        var lxr = document.querySelector('.lxr')
+        var kj = document.querySelector('.kj')
+        var tt = document.querySelector('.tt')
+        var xinxi = document.querySelector('.xinxi')
+        tt.style.left = xx.offsetLeft + 'px'
+
+        //    实现点击信息联系人空间下面的面板切换，以及横杠的位置移动
+        xx.onclick = function () {
+            tt.style.left = xx.offsetLeft + 'px'
+            xinxi.style.left = '0px'
+        }
+
+        lxr.onclick = function () {
+            tt.style.left = lxr.offsetLeft + 'px'
+            xinxi.style.left = '-432px'
+        }
+
+
+        kj.onclick = function () {
+            tt.style.left = kj.offsetLeft + 'px'
+            xinxi.style.left = '-864px'
+        }
+
+        // 控制点击各种信息的效果
+
+        var xx_1_b = document.querySelectorAll('.xx-1-b')
+        var lxr_1_b = document.querySelectorAll('.lxr-1-b')
+        var kj_1_b = document.querySelectorAll('.kj-1-b')
+        var last = 0
+        var xx_lxr_kj = []
+        xx_lxr_kj.push(...xx_1_b , ...lxr_1_b , ...kj_1_b)
+        console.log(xx_lxr_kj)
+
+
+        // 实现点击后背景色变成灰色，点击另一个就会让上一次点击的失去背景色
+        for (var i = 0; i < xx_lxr_kj.length; i++) {
+            xx_lxr_kj[i].sb = false
+            xx_lxr_kj[i].index = i
+            xx_lxr_kj[i].onclick = function () {
+               
+                if (!this.sb) {
+                    xx_lxr_kj[last].style.background = ''
+                    xx_lxr_kj[last].sb = false
+                    this.style.background = 'rgba(180,180,180,.5)'
+                } else {
+                    this.style.background = ''
+                }
+                this.sb = !this.sb
+                last = this.index
+            } 
+        }
+
+        // for (var i = 0; i < xx_1_b.length; i++) {
+        //     xx_1_b[i].sb = false
+        //     xx_1_b[i].index = i
+        //     xx_1_b[i].onclick = function () {
+               
+        //         if (!this.sb) {
+        //             xx_1_b[last].style.background = ''
+        //             xx_1_b[last].sb = false
+        //             this.style.background = 'rgba(180,180,180,.5)'
+        //         } else {
+        //             this.style.background = ''
+        //         }
+        //         this.sb = !this.sb
+        //         last = this.index
+        //     } 
+        // }
+        // for (var i = 0; i < lxr_1_b.length; i++) {
+        //     lxr_1_b[i].sb = false
+        //     lxr_1_b[i].index = i
+        //     lxr_1_b[i].onclick = function () {
+               
+        //         if (!this.sb) {
+        //             lxr_1_b[last].style.background = ''
+        //             lxr_1_b[last].sb = false
+        //             this.style.background = 'rgba(180,180,180,.5)'
+        //         } else {
+        //             this.style.background = ''
+        //         }
+        //         this.sb = !this.sb
+        //         last = this.index
+        //     } 
+        // }
+        // for (var i = 0; i < kj_1_b.length; i++) {
+        //     kj_1_b[i].sb = false
+        //     kj_1_b[i].index = i
+        //     kj_1_b[i].onclick = function () {
+               
+        //         if (!this.sb) {
+        //             kj_1_b[last].style.background = ''
+        //             kj_1_b[last].sb = false
+        //             this.style.background = 'rgba(180,180,180,.5)'
+        //         } else {
+        //             this.style.background = ''
+        //         }
+        //         this.sb = !this.sb
+        //         last = this.index
+        //     } 
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<!--
+
+-->
+<body>
+    <div class="question">
+        var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {
+    alert(1);
+}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {
+    alert(3);
+}, 'xyz' - 90];
+<ul>
+    <li>所有的数字：</li>
+    <li>可以转成数字的</li>
+    <li>转成数字的最大值</li>
+    <li>所有运算结果是NaN的位置</li>
+</ul>
+    </div>
+    <hr>
+    <div class="answer">
+        
+    </div>
+    <script>
+        var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {alert(1);}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {alert(3);}, 'xyz' - 90];
+		var myNum = ''
+		var myAltNum = ''
+		var myMaxAltNum = 0
+		var myNanPosition1 = ''
+		var myNanPosition2 = ''
+		var answer = document.querySelector('.answer')
+		var len = arr.length
+		var results = 'aNum + aAltNum + aMaxAltNum + nanPosition'
+		console.log(Number(arr[2]))
+		for(var i=0;i<len;i++){
+			if(typeof arr[i] === 'number' && arr[i] == arr[i]){
+				myNum += arr[i] + '、'
+			}
+			if(parseFloat(arr[i])){
+				myAltNum += arr[i] + '、'
+			}
+			
+			if(myMaxAltNum < parseFloat(arr[i])){
+				myMaxAltNum = parseFloat(arr[i])
+			}
+			
+			if(isNaN(arr[i])){
+				myNanPosition1 += i + '、'
+			}
+			
+			if(parseFloat(arr[i])){
+				myNanPosition2 += arr[i] + '、'
+			}
+		}
+		
+		answer.innerHTML = '<p>所有的数字:' + myNum + '</p><p>可以转成数字的:' + myAltNum + '</p><p>转成数字的最大值:'+ myMaxAltNum + '</p><p>所有运算结果是NaN的位置number:'+ myNanPosition1 +'</p>'
+		
+    </script>
+</body>
+</html>
